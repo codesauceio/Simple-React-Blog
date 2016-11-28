@@ -1,0 +1,105 @@
+$side-background-color: rgb(61, 79, 93);
+$background-color: #fff;
+
+html,
+body {
+  box-sizing: border-box;
+  display: block;
+  font-family: ‘Helvetica Neue’, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  height: 100%;
+  min-height: 100%;
+  min-width: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.side {
+  align-items: center;
+  background-color: $side-background-color;
+  bottom: 0;
+  display: flex;
+  height: 100vh;
+  justify-content: flex-end;
+  left: 0;
+  min-height: 100vh;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  width: 25%;
+
+  .brand-title {
+    color: #f8f8f8;
+    margin: 5px;
+    padding: 0;
+    text-align: right;
+    text-transform: uppercase;
+  }
+
+  .brand-tagline {
+    color: rgb(176, 202, 219);
+    margin: 0;
+    padding: 0;
+    text-align: right;
+  }
+}
+
+.main {
+  background-color: $background-color;
+  height: 100%;
+  margin-left: 25%;
+  min-height: 100%;
+  padding: 20px 50px;
+}
+
+.blog-posts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.blog-posts-heading {
+  border-bottom: 1px dotted #ccc;
+  color: #aaa;
+  display: block;
+  font-size: .9rem;
+  margin: 25px auto 40px;
+  padding: 5px 0;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.blog-post {
+  display: block;
+  margin: 20px 0 80px;
+  position: relative;
+}
+
+.blog-post-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0 auto 10px;
+}
+
+.blog-post-subtitle {
+  color: #aaa;
+  font-size: .9rem;
+}
+
+.blog-post-body {
+  color: #333;
+  margin: 20px auto 0;
+}
+
+.blog-post-avatar {
+  background-color: #e8e8e8;
+  border: inset 2px solid transparent;
+  border-radius: 50px;
+  height: 48px;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 48px;
+  z-index: 1;
+}
