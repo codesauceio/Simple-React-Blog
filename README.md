@@ -1,2 +1,2 @@
 # React Simple Blog
-Simple blog using React.js
+Simple blog template using React.js
