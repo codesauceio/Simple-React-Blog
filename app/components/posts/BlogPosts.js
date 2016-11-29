@@ -1,18 +1,25 @@
 import React, {Component, PropTypes} from 'react';
 import Post from 'Post';
-import blogPostApi from 'BlogPostApi';
+import BlogPostApi from 'BlogPostApi';
 
 class BlogPosts extends Component {
     constructor(props) {
         super(props);
-        this.posts = blogPostApi.getBlogPosts();
+        let posts = BlogPostApi.getBlogPosts();
+        this.state = {
+            posts: posts
+        }
     }
-    posts = [];
-    getPosts = function() {
-        let list = this.posts.map((post, idx)=>{
-            return <li key={idx}><Post post={post} /></li>;
+    getPosts = ()=>{
+        let list = this.state.posts.map((post)=>{
+            return <li key={post.id}><Post post={post} onCommentSave={this.saveComment} /></li>;
         });
         return list;
+    }
+    saveComment = (postId, comment)=>{
+        let posts = BlogPostApi.saveBlogPostComment(postId, comment, 'Unknown User');
+        debugger;
+        this.setState({posts: posts});
     }
     render() {
         return (

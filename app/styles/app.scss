@@ -4,6 +4,7 @@ $background-color: #fff;
 html,
 body {
   box-sizing: border-box;
+  color: #333;
   display: block;
   font-family: ‘Helvetica Neue’, Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -12,6 +13,10 @@ body {
   min-width: 100%;
   position: relative;
   width: 100%;
+}
+
+.main-content {
+  min-width: 1020px;
 }
 
 .side {
@@ -23,8 +28,10 @@ body {
   justify-content: flex-end;
   left: 0;
   min-height: 100vh;
+  min-width: 260px;
+  overflow: visible;
   padding: 20px;
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 25%;
 
@@ -59,7 +66,7 @@ body {
 }
 
 .blog-posts-heading {
-  border-bottom: 1px dotted #ccc;
+  border-bottom: 2px dotted #ccc;
   color: #aaa;
   display: block;
   font-size: .9rem;
@@ -78,7 +85,7 @@ body {
 .blog-post-title {
   font-size: 2rem;
   font-weight: 600;
-  margin: 0 auto 10px;
+  margin: 0 100px 10px 0;
 }
 
 .blog-post-subtitle {
@@ -87,19 +94,79 @@ body {
 }
 
 .blog-post-body {
-  color: #333;
   margin: 20px auto 0;
 }
 
 .blog-post-avatar {
   background-color: #e8e8e8;
   border: inset 2px solid transparent;
-  border-radius: 50px;
-  height: 48px;
+  border-radius: 50%;
+  height: 64px;
   overflow: hidden;
   position: absolute;
   right: 0;
   top: 0;
-  width: 48px;
+  width: 64px;
   z-index: 1;
+}
+
+.comments {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 20px 0;
+  padding: 0;
+
+  .comment {
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    color: #555;
+    display: flex;
+    flex-direction: row;
+    margin: 24px 16px 0;
+
+    &:last-of-type {
+      border-bottom: 0;
+    }
+  }
+}
+
+.comment-avatar {
+  border-radius: 50%;
+  height: 48px;
+  margin: 0 20px 0 5px;
+  overflow: hidden;
+  width: 48px;
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.comment-content {
+  flex: 9;
+
+  p {
+    font-size: .9rem;
+    font-weight: 400;
+
+    &:nth-child(1) {
+      color: #999;
+      font-size: .8rem;
+    }
+
+    &:nth-child(2) {
+      margin: -8px 0 20px;
+    }
+
+    .comment-author {
+      color: #ee7b28;
+      text-transform: capitalize;
+    }
+  }
+}
+
+.comment-form {
+  background-color: #f2f2f2;
+  border-top: 1px solid #ccc;
+  padding: 25px 15px 3px;
 }

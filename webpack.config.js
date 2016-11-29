@@ -4,6 +4,7 @@ module.exports = {
     entry: [
         'script!jquery/dist/jquery.min.js',
         'script!bootstrap/dist/js/bootstrap.min.js',
+        'script!lodash/lodash.min.js',
         './app/app.js'  
     ],
     externals: {
@@ -12,7 +13,8 @@ module.exports = {
     plugins: [
         new webpack.ProvidePlugin({
             '$': 'jquery',
-            'jQuery': 'jquery'
+            'jQuery': 'jquery',
+            '_': 'lodash'
         })
     ],
     output: {
@@ -26,7 +28,10 @@ module.exports = {
             Main: 'app/components/Main.js',
             BlogPosts: 'app/components/posts/BlogPosts.js',
             BlogPostApi: 'app/api/blogPostApi.js',
-            Post: 'app/components/posts/Post.js'
+            Post: 'app/components/posts/Post.js',
+            Comments: 'app/components/comments/Comments.js',
+            Comment: 'app/components/comments/Comment.js',
+            CommentForm: 'app/components/comments/CommentForm.js'
         },
         extensions: ['', '.js']
     },
@@ -38,7 +43,7 @@ module.exports = {
                     presets: ['react', 'es2015', 'stage-0']
                 },
                 test: /\.js?$/,
-                exclude: /(mode_modules | bower_components)/
+                exclude: /(node_modules | bower_components)/
             },
             {
                 test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
